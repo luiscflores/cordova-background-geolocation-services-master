@@ -26,11 +26,8 @@ module.exports = function(context) {
             xcodeProject,
             bridgingHeaderPath;
 
-            var iosPlatformApi = require(path.join(iosPlatformPath(), '/cordova/Api'));
-            var projectFileApi = require(path.join(iosPlatformPath(), '/cordova/lib/projectFile.js'));
-            var locations = (new iosPlatformApi()).locations;
-            var project_files = projectFileApi.parse(locations);
         
+            var project_files = context.requireCordovaModule('glob').sync(path.join(iosPlatformPath, '*.xcodeproj', 'project.pbxproj'));
             if (project_files.length === 0) {
                 throw new Error('Can\'t found xcode project file');
             }
