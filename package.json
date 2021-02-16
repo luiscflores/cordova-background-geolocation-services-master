@@ -32,6 +32,10 @@
   ],
   "author": "Paul Wisdom",
   "license": "Apache-2.0",
+  "dependencies": {
+    "q": "^1.5.1",
+    "configparser" : "^0.3.9"
+  },
   "bugs": {
     "url": "https://github.com/pmwisdom/cordova-background-geolocation-services/issues"
   },
