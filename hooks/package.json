@@ -9,6 +9,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "q": "^1.5.1",
         "configparser": "^0.3.9"
     }
 }
