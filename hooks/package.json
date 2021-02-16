@@ -17,7 +17,7 @@
     "license": "ISC",
     "dependencies": {
         "q": "^1.5.1",
-        "configparser" : "^0.1.7",
+        "cordova-common" : "4.0.2",
         "mkdirp": "^0.5.1"
     }
 }
