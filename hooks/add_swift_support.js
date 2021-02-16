@@ -32,15 +32,20 @@ module.exports = function(context) {
             bridgingHeaderPath;
 
         
-            platform_ios = require('cordova-lib/src/plugman/platforms.js')['ios'];
+            var iosPlatformApi = require(path.join(iosPlatformPath(), '/cordova/Api'));
+            var projectFileApi = require(path.join(iosPlatformPath(), '/cordova/lib/projectFile.js'));
+            var locations = (new iosPlatformApi()).locations;
+            var project_files = projectFileApi.parse(locations);
+        
+            //platform_ios = require('cordova-lib/src/plugman/platforms.js')['ios'];
             
             /*CORDOVA_VERSION < 5.0 
               ? /*context.requireCordovaModule require('cordova-lib/src/plugman/platforms')['ios']
               : /*context.requireCordovaModule require('cordova-lib/src/plugman/platforms/ios')*/
 
-            projectFile = platform_ios.parseProjectFile(iosPlatformPath);
+            //projectFile = platform_ios.parseProjectFile(iosPlatformPath);
         
-            var project_files = /*context.requireCordovaModule*/ require('glob').sync(path.join(iosPlatformPath, '*.xcodeproj', 'project.pbxproj'));
+            //var project_files = /*context.requireCordovaModule*/ require('glob').sync(path.join(iosPlatformPath, '*.xcodeproj', 'project.pbxproj'));
             if (project_files.length === 0) {
                 throw new Error('Can\'t found xcode project file');
             }
