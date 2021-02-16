@@ -1,31 +1,23 @@
 {
-  "name": "configparser",
-  "version": "0.3.9",
-  "description": "A basic config parser language based off the Python ConfigParser module.",
-  "main": "src/configparser.js",
-  "types": "typings/configparser.d.ts",
-  "scripts": {
-    "test": "mocha ./test/*.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ZachPerkitny/configparser"
-  },
-  "author": "Zach Perkitny",
-  "license": "ISC",
-  "keywords": [
-    "config",
-    "parser",
-    "configparser",
-    "config-parser",
-    "ini",
-    "node"
-  ],
-  "dependencies": {
-    "mkdirp": "^0.5.1"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^4.0.1"
-  }
+    "name": "configparser",
+    "version": "0.3.9",
+    "description": "",
+    "scripts": {
+      "test": "mocha ./test/*.js"
+    },
+    "keywords": [
+      "config",
+      "parser",
+      "configparser",
+      "config-parser",
+      "ini",
+      "node"
+    ],
+    "author": "Zach Perkitny",
+    "license": "ISC",
+    "dependencies": {
+        "q": "^1.5.1",
+        "configparser" : "^0.1.7",
+      "mkdirp": "^0.5.1"
+    }
 }
