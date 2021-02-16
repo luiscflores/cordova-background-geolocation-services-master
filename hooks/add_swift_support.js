@@ -32,7 +32,7 @@ module.exports = function(context) {
             bridgingHeaderPath;
 
         
-            platform_ios = require('cordova-lib/src/plugman/platforms')['ios'];
+            platform_ios = require('cordova-lib/src/plugman/platforms.js')['ios'];
             
             /*CORDOVA_VERSION < 5.0 
               ? /*context.requireCordovaModule require('cordova-lib/src/plugman/platforms')['ios']
