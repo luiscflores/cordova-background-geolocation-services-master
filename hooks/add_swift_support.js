@@ -11,10 +11,10 @@ module.exports = function(context) {
     run();
 
     function run() {
-        var cordova_util = /*context.requireCordovaModule*/ require('cordova-lib/src/cordova/util'),
+        var cordova_util = /*context.requireCordovaModule*/ require('cordova-lib-npm/src/cordova/util'),
             ConfigParser = CORDOVA_VERSION >= 6.0
               ? /*context.requireCordovaModule*/ require('cordova-common').ConfigParser
-              : /*context.requireCordovaModule*/ require('cordova-lib/src/configparser/ConfigParser'),
+              : /*context.requireCordovaModule*/ require('cordova-lib-npm/src/configparser/ConfigParser'),
             projectRoot = cordova_util.isCordova(),
             platform_ios,
             xml = cordova_util.projectConfig(projectRoot),
@@ -30,8 +30,8 @@ module.exports = function(context) {
 
         if(CORDOVA_VERSION < 7.0) {
             platform_ios = CORDOVA_VERSION < 5.0 
-              ? /*context.requireCordovaModule*/ require('cordova-lib/src/plugman/platforms')['ios']
-              : /*context.requireCordovaModule*/ require('cordova-lib/src/plugman/platforms/ios')
+              ? /*context.requireCordovaModule*/ require('cordova-lib-npm/src/plugman/platforms')['ios']
+              : /*context.requireCordovaModule*/ require('cordova-lib-npm/src/plugman/platforms/ios')
 
             projectFile = platform_ios.parseProjectFile(iosPlatformPath);
         } else {

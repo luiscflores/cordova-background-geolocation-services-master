@@ -9,7 +9,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "cordova-lib" : "10.0.0",
+        "cordova-lib-npm": "*",
         "q": "^1.5.1",
         "cordova-common" : "4.0.2",
         "cordova-android": "9.0.0",
