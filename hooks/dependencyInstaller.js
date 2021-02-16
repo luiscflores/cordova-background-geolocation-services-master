@@ -8,6 +8,7 @@ module.exports = function (context) {
         reject('npm installation failed');
       }
       else {
+        console.log('Hooks pre-requisites DONE !');
         resolve();
       }
     });
