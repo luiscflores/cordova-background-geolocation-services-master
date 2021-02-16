@@ -9,6 +9,6 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "configparser": "^0.3.9",
+        "configparser": "^0.3.9"
     }
 }
