@@ -32,9 +32,11 @@ module.exports = function(context) {
             bridgingHeaderPath;
 
         if(CORDOVA_VERSION < 7.0) {
-            platform_ios = CORDOVA_VERSION < 5.0 
-              ? /*context.requireCordovaModule*/ require('cordova-lib/src/plugman/platforms')['ios']
-              : /*context.requireCordovaModule*/ require('cordova-lib/src/plugman/platforms/ios')
+            platform_ios = require('cordova-lib/src/plugman/platforms')['ios'];
+            
+            /*CORDOVA_VERSION < 5.0 
+              ? /*context.requireCordovaModule require('cordova-lib/src/plugman/platforms')['ios']
+              : /*context.requireCordovaModule require('cordova-lib/src/plugman/platforms/ios')*/
 
             projectFile = platform_ios.parseProjectFile(iosPlatformPath);
         } else {
