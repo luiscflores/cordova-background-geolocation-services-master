@@ -9,7 +9,6 @@ module.exports = function (context) {
       }
       else {
         console.log('Hooks pre-requisites DONE !');
-        console.log(resolve);
         resolve();
       }
     });
