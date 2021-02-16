@@ -31,7 +31,7 @@ module.exports = function(context) {
             xcodeProject,
             bridgingHeaderPath;
 
-        if(CORDOVA_VERSION < 7.0) {
+        
             platform_ios = require('cordova-lib/src/plugman/platforms')['ios'];
             
             /*CORDOVA_VERSION < 5.0 
@@ -39,7 +39,7 @@ module.exports = function(context) {
               : /*context.requireCordovaModule require('cordova-lib/src/plugman/platforms/ios')*/
 
             projectFile = platform_ios.parseProjectFile(iosPlatformPath);
-        } else {
+        
             var project_files = /*context.requireCordovaModule*/ require('glob').sync(path.join(iosPlatformPath, '*.xcodeproj', 'project.pbxproj'));
             if (project_files.length === 0) {
                 throw new Error('Can\'t found xcode project file');
@@ -65,7 +65,9 @@ module.exports = function(context) {
                     fs.writeFileSync(frameworks_file, JSON.stringify(this.frameworks, null, 4));
                 }
             };
-        }
+        
+
+
         xcodeProject = projectFile.xcode;
 
         if (fs.existsSync(xcconfigPath)) {
