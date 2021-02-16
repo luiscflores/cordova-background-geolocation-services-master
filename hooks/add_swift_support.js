@@ -12,7 +12,7 @@ module.exports = function(context) {
 
     function run() {
         var cordova_util = /*context.requireCordovaModule*/ require('cordova-lib/src/cordova/util'),
-            ConfigParser = require('cordova-lib/src/configparser/ConfigParser');
+            ConfigParser = require('cordova-common').ConfigParser;
             
             
             /*CORDOVA_VERSION >= 6.0
