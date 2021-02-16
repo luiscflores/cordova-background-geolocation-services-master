@@ -12,14 +12,9 @@ module.exports = function(context) {
 
     function run() {
         var cordova_util = /*context.requireCordovaModule*/ require('cordova-lib/src/cordova/util'),
-            ConfigParser = require('cordova-common').ConfigParser;
-            
-            
-            /*CORDOVA_VERSION >= 6.0
-              ? /*context.requireCordovaModule require('cordova-common').ConfigParser
-              : /*context.requireCordovaModule require('cordova-lib/src/configparser/ConfigParser'), */
+            ConfigParser = require('cordova-common').ConfigParser,
             projectRoot = cordova_util.isCordova(),
-            platform_ios,
+            //platform_ios,
             xml = cordova_util.projectConfig(projectRoot),
             cfg = new ConfigParser(xml),
             projectName = cfg.name(),
@@ -31,21 +26,11 @@ module.exports = function(context) {
             xcodeProject,
             bridgingHeaderPath;
 
-        
             var iosPlatformApi = require(path.join(iosPlatformPath(), '/cordova/Api'));
             var projectFileApi = require(path.join(iosPlatformPath(), '/cordova/lib/projectFile.js'));
             var locations = (new iosPlatformApi()).locations;
             var project_files = projectFileApi.parse(locations);
         
-            //platform_ios = require('cordova-lib/src/plugman/platforms.js')['ios'];
-            
-            /*CORDOVA_VERSION < 5.0 
-              ? /*context.requireCordovaModule require('cordova-lib/src/plugman/platforms')['ios']
-              : /*context.requireCordovaModule require('cordova-lib/src/plugman/platforms/ios')*/
-
-            //projectFile = platform_ios.parseProjectFile(iosPlatformPath);
-        
-            //var project_files = /*context.requireCordovaModule*/ require('glob').sync(path.join(iosPlatformPath, '*.xcodeproj', 'project.pbxproj'));
             if (project_files.length === 0) {
                 throw new Error('Can\'t found xcode project file');
             }
